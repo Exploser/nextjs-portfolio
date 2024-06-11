@@ -88,6 +88,8 @@ const AboutSection = () => {
             </TabButton>
           </div>
           <div className="mt-2">
+            {/* Add a Spinner Here */}
+            {isPending ? "Loading..." : null}
             {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
         </div>
