@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Navlink from "./Navlink";
 import MenuOverlay from "./MenuOverlay";
+import Image from "next/image";
 
 const navLinks = [
   {
@@ -21,16 +22,40 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav className={`sticky top-0 z-50 flex justify-between items-center text-xl font-semibold duration-100 h-20 ${scrolled ? 'scrolled bg-black bg-opacity-60 p-4 text-slate-800 h-12' : 'text-white bg-transparent h-20 p-2'}`}>
+        <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
+          className={`text-2xl md:text-5xl font-semibold${scrolled? 'text-black' : 'text-white'}`}
         >
-          LOGO
+          <div className={`logo ${scrolled ? 'items-center justify-center' : 'hidden'}`}>
+            <Image
+              src="/logo.svg"
+              alt="Exploser Logo"
+              width={40}
+              height={40}
+            />
+          </div>
+          <span className={`text-2xl font-semibold whitespace-nowrap dark ${scrolled ? 'hidden' : ''}`}>Exploser</span>
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
