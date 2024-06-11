@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import Navlink from "./Navlink";
 
 const navLinks = [
   {
@@ -51,6 +52,7 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
               <li key={index}>
+                <Navlink href={link.path} title={link.title} />
               </li>
             ))}
           </ul>
