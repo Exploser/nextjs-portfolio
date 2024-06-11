@@ -8,13 +8,20 @@ import Image from "next/image";
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
+    const target = e.target as typeof e.target & {
+      email: { value: string };
+      subject: { value: string };
+      message: { value: string };
     };
+
+    const data = {
+      email: target.email.value,
+      subject: target.subject.value,
+      message: target.message.value,
+    };
+
     const JSONdata = JSON.stringify(data);
     const endpoint = "/api/send";
 
