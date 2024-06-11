@@ -1,6 +1,7 @@
 "use client";
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
+import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
@@ -63,6 +64,32 @@ const AboutSection = () => {
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>
+          <div className="flex flex-row justify-start mt-8">
+            <TabButton
+              selectTab={() => handleTabChange("skills")}
+              active={tab === "skills"}
+            >
+              {" "}
+              Skills{" "}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("education")}
+              active={tab === "education"}
+            >
+              {" "}
+              Education{" "}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("certifications")}
+              active={tab === "certifications"}
+            >
+              {" "}
+              Certifications{" "}
+            </TabButton>
+          </div>
+          <div className="mt-2">
+            {TAB_DATA.find((t) => t.id === tab)?.content}
+          </div>
         </div>
       </div>
     </section>
