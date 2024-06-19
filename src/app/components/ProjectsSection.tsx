@@ -43,12 +43,11 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Keep It Up: Keyboard Wallmount",
+    description: "A simple wall mount for displaying and storing your keyboard.",
+    image: "/images/projects/keep-it-up.jpeg",
+    tag: ["All", "3D Models"],
+    previewUrl: "https://than.gs/m/1056436",
   },
   {
     id: 6,
