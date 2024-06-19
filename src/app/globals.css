@@ -27,3 +27,24 @@ body {
     text-wrap: balance;
   }
 }
+
+#header-bg {
+  animation: pulse 3s linear infinite;
+}
+#header-img{ 
+  animation: updown 3s linear infinite;
+}
+
+
+/* Animations */
+@keyframes updown {
+  0% {
+      transform: translateY(-0px);
+  }
+  50% {
+      transform: translateY(10px);
+  }
+  100% {
+      transform: translateY(-0px);
+  }
+}

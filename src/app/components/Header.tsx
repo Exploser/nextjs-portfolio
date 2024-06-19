@@ -72,12 +72,14 @@ const HeaderSection = () => {
           transition={{ duration: 0.5 }}
           className="flex-1 mt-4 lg:mt-0 flex justify-center"
         >
-          <div className="relative rounded-full bg-[#d65a5a] w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]">
+          <div className="relative rounded-full bg-[#d65a5a] w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]"
+          id="header-bg">
             <Image
               src="/images/header-img1.svg"
               alt="hero image"
               layout="fill"
               objectFit="contain"
+              id="header-img"
             />
           </div>
         </motion.div>
