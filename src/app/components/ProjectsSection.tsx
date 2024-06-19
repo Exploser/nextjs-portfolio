@@ -25,12 +25,12 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
+    title: "Exploser Portfolio: Personal Portfolio",
+    description: "A simple portfolio application with Next, React, and TailwindCSS.",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Exploser/portfolio-website",
+    previewUrl: "https://exploser.info/",
   },
   {
     id: 4,
