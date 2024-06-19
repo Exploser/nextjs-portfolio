@@ -9,43 +9,48 @@ import Link from "next/link";
 const HeaderSection = () => {
   return (
     <section className="lg:py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
+      <div className="flex flex-col sm:flex-row items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+          className="flex-1 text-center sm:text-left"
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+            <span className="bg-clip-text text-6xl bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, I&apos;m{" "}
             </span>
             <br></br>
-            <TypeAnimation
-              sequence={[
-                "Abhijeet",
-                1000,
-                "Web Developer",
-                1000,
-                "Mobile Developer",
-                1000,
-                "UI/UX Designer",
-                1000,
-                "Freelancer",
-                1000,
-                "Exploser",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+            <div className="h-64 flex items-center ml-6">
+              <TypeAnimation
+                sequence={[
+                  "Abhijeet",
+                  1000,
+                  "Web Developer",
+                  1000,
+                  "Mobile Developer",
+                  1000,
+                  "UI/UX Designer",
+                  1000,
+                  "Freelancer",
+                  1000,
+                  "Exploser",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={1}
+                deletionSpeed={1}
+                repeat={Infinity}
+                className="lg"
+                cursor={true}
+              />
+            </div>
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          Specializing in writing clean, decoupled, and testable code. Skilled in Object-Oriented Programming and versed in Agile and SCRUM methodologies. Committed to continuous learning.
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl mt-8">
+            Specializing in writing clean, decoupled, and testable code. Skilled in Object-Oriented Programming and versed in Agile and SCRUM methodologies. Committed to continuous learning.
           </p>
           <div>
-          <Link
+            <Link
               href="/#contact"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
@@ -65,7 +70,7 @@ const HeaderSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-4 place-self-center mt-4 lg:mt-0"
+          className="flex-1 mt-4 lg:mt-0 flex justify-center"
         >
           <div className="relative rounded-full bg-[#d65a5a] w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]">
             <Image
