@@ -20,8 +20,8 @@ const projectsData = [
     description: "A simple blog application made with wordpress.",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Exploser/Personal-Blog-Site",
+    previewUrl: "https://exploserblogs.com/",
   },
   {
     id: 3,
