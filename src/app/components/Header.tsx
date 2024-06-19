@@ -5,14 +5,10 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import headerImg1 from "../assets/img/header-img1.svg";
-import headerImg2 from "../assets/img/header-img2.svg";
-import headerImg3 from "../assets/img/header-img3.svg";
 
-
-const HeroSection = () => {
+const HeaderSection = () => {
   return (
-    <section className="lg:py-16">
+    <section className="lg:py-8">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -86,4 +82,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HeaderSection;
