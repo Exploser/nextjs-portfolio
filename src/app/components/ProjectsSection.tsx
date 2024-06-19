@@ -11,8 +11,8 @@ const projectsData = [
     description: "Spotify Web API project to find new music based on your taste.",
     image: "/images/projects/0.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Exploser/SpotiShare",
+    previewUrl: "https://wrapifer.vercel.app/",
   },
   {
     id: 2,
