@@ -16,8 +16,8 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
+    title: "Exploser Blogs: Personal Blogs",
+    description: "A simple blog application made with wordpress.",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
     gitUrl: "/",
