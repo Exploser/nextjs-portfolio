@@ -53,7 +53,7 @@ const projectsData = [
     id: 6,
     title: "Tweet Ahead: Twitter Scheduler",
     description: "Schedule your tweets ahead of time",
-    image: "/images/projects/tweet-ahead.png",
+    image: "/images/projects/Tweet-Ahead.jpg",
     tag: ["All", "Web"],
     previewUrl: "https://github.com/Exploser/Posts-Scheduler",
   },
