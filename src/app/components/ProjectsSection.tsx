@@ -9,7 +9,7 @@ const projectsData = [
     id: 1,
     title: "TacoTunes: Find new music!",
     description: "Spotify Web API project to find new music based on your taste.",
-    image: "/images/projects/0.png",
+    image: "/images/projects/Taco-Tunes.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Exploser/SpotiShare",
     previewUrl: "https://wrapifer.vercel.app/",
