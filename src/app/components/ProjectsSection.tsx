@@ -27,7 +27,7 @@ const projectsData = [
     id: 3,
     title: "Exploser Portfolio: Personal Portfolio",
     description: "A simple portfolio application with Next, React, and TailwindCSS.",
-    image: "/images/projects/3.png",
+    image: "/images/projects/Portfolio.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Exploser/portfolio-website",
     previewUrl: "https://exploser.info/",
