@@ -18,7 +18,7 @@ const projectsData = [
     id: 2,
     title: "Exploser Blogs: Personal Blogs",
     description: "A simple blog application made with wordpress.",
-    image: "/images/projects/2.png",
+    image: "/images/projects/Blogs.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Exploser/Personal-Blog-Site",
     previewUrl: "https://exploserblogs.com/",
