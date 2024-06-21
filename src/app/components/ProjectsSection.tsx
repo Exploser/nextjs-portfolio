@@ -34,15 +34,6 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
     title: "Keep It Up: Keyboard Wallmount",
     description: "A simple wall mount for displaying and storing your keyboard.",
     image: "/images/projects/keep-it-up.jpeg",
@@ -50,7 +41,7 @@ const projectsData = [
     previewUrl: "https://than.gs/m/1056436",
   },
   {
-    id: 6,
+    id: 5,
     title: "Tweet Ahead: Twitter Scheduler",
     description: "Schedule your tweets ahead of time",
     image: "/images/projects/Tweet-Ahead.jpg",
