@@ -48,9 +48,16 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li className="skill">Fullstack Academy of Code</li>
-        <li className="skill">University of California, Santa Cruz</li>
+      <ul className="pl-2" id="education">
+        <li className="skill">
+          <a href="https://commons.wikimedia.org/wiki/File:Conestoga_College_logo.svg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Conestoga_College_logo.svg"></img>
+            <span className="tooltip">Conestoga College</span>
+          </a>
+        </li>
+        <li className="skill">
+          Software Engineering Technology Advanced Diploma
+        </li>
       </ul>
     ),
   },
