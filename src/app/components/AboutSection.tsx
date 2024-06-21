@@ -62,8 +62,8 @@ const TAB_DATA = [
     ),
   },
   {
-    title: "Certifications",
-    id: "certifications",
+    title: "Content",
+    id: "content",
     content: (
       <ul className="list-disc pl-2">
         <li className="skill">AWS Cloud Practitioner</li>
@@ -113,11 +113,11 @@ const AboutSection = () => {
               Education{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
+              selectTab={() => handleTabChange("content")}
+              active={tab === "content"}
             >
               {" "}
-              Certifications{" "}
+              Content{" "}
             </TabButton>
           </div>
           <div className="mt-2">
