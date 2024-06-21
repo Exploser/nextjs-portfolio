@@ -20,12 +20,12 @@ const HeaderSection = () => {
             <span className="bg-clip-text text-6xl bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, I&apos;m{" "}
             </span>
+            <span className="text-animation">Abhijeet</span>
             <br></br>
-            <div className="h-64 flex items-center ml-6">
+            <div className="h-64 flex items-center text-8xl">
+            {/* a &nbsp; */}
               <TypeAnimation
                 sequence={[
-                  "Abhijeet",
-                  1000,
                   "Web Developer",
                   1000,
                   "Mobile Developer",
@@ -33,8 +33,6 @@ const HeaderSection = () => {
                   "UI/UX Designer",
                   1000,
                   "Freelancer",
-                  1000,
-                  "Exploser",
                   1000,
                 ]}
                 wrapper="span"
