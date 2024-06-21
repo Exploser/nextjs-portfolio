@@ -74,3 +74,13 @@ body {
 .skill:hover .tooltip {
   visibility: visible;
 }
+
+#education {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+}
