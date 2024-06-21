@@ -27,7 +27,7 @@ const TAB_DATA = [
         </li>
         <li className="skill">
           <img src="/images/tools/javascript.svg"></img>
-          <span className="tooltip">Javascript & Typescript</span>  
+          <span className="tooltip">Javascript & Typescript</span>
         </li>
         <li className="skill">
           <img src="/images/tools/react.svg"></img>

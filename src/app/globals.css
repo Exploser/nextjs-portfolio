@@ -49,6 +49,7 @@ body {
   }
 }
 
+/* About me */
 #skills {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -57,4 +58,19 @@ body {
     width: 100px;
     height: 100px;
   }
+}
+.skill .tooltip {
+  visibility: hidden;
+  width: 100px;
+  background-color: rgba(65, 65, 65, 0.853);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  border:10px solid #000;
+  border-color: black transparent transparent transparent;
+}
+.skill:hover .tooltip {
+  visibility: visible;
 }
