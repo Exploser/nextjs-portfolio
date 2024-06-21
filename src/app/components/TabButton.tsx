@@ -18,7 +18,8 @@ const TabButton = ({ active, selectTab, children }: { active: boolean, selectTab
         animate={active ? "active" : "default"}
         variants={variants}
         className="h-1 bg-primary-500 mt-2 mr-3"
-      ></motion.div>
+      >
+      </motion.div>
     </button>
   );
 };
