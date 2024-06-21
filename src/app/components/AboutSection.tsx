@@ -9,17 +9,38 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="pl-2" id="skills">
-        <li>
+        <li className="skill">
           <img src="/images/tools/node-js.svg"></img>
-          <span className="tooltip">Node.js</span>
+          <span className="tooltip">NodeJS</span>
         </li>
-        <li><img src="/images/tools/express-js.svg"></img></li>
-        <li><img src="/images/tools/postgres-sql.svg"></img></li>
-        <li><img src="/images/tools/firebase.svg"></img></li>
-        <li><img src="/images/tools/javascript.svg"></img></li>
-        <li><img src="/images/tools/react.svg"></img></li>
-        <li><img src="/images/tools/c-sharp.svg"></img></li>
-        <li><img src="/images/tools/next-js.svg"></img></li>
+        <li className="skill">
+          <img src="/images/tools/express-js.svg"></img>
+          <span className="tooltip">Express</span>
+        </li>
+        <li className="skill">
+          <img src="/images/tools/postgres-sql.svg"></img>
+          <span className="tooltip">Postgres SQL</span>
+        </li>
+        <li className="skill">
+          <img src="/images/tools/firebase.svg"></img>
+          <span className="tooltip">Firebase</span>
+        </li>
+        <li className="skill">
+          <img src="/images/tools/javascript.svg"></img>
+          <span className="tooltip">Javascript & Typescript</span>  
+        </li>
+        <li className="skill">
+          <img src="/images/tools/react.svg"></img>
+          <span className="tooltip">React</span>
+        </li>
+        <li className="skill">
+          <img src="/images/tools/c-sharp.svg"></img>
+          <span className="tooltip">C#</span>
+        </li>
+        <li className="skill">
+          <img src="/images/tools/next-js.svg"></img>
+          <span className="tooltip">NextJS</span>
+        </li>
       </ul>
     ),
   },
@@ -28,8 +49,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li className="skill">Fullstack Academy of Code</li>
+        <li className="skill">University of California, Santa Cruz</li>
       </ul>
     ),
   },
@@ -38,8 +59,8 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li className="skill">AWS Cloud Practitioner</li>
+        <li className="skill">Google Professional Cloud Developer</li>
       </ul>
     ),
   },
