@@ -89,7 +89,7 @@ body {
 /* Animations */
 .text-animation {
   font-family:oswald,sans-serif;
-  background:url(/images/fill.jpg) repeat-y 0 0;
+  background:url(/images/fill2.jpeg) repeat-y 0 0;
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
