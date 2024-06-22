@@ -10,35 +10,35 @@ const TAB_DATA = [
     content: (
       <ul className="pl-2" id="skills">
         <li className="skill">
-          <img src="/images/tools/node-js.svg"></img>
+          <img src="/images/tools/node-js.svg" alt="Node JS" />
           <span className="tooltip">NodeJS</span>
         </li>
         <li className="skill">
-          <img src="/images/tools/express-js.svg"></img>
+          <img src="/images/tools/express-js.svg" alt="Express JS" />
           <span className="tooltip">Express</span>
         </li>
         <li className="skill">
-          <img src="/images/tools/postgres-sql.svg"></img>
+          <img src="/images/tools/postgres-sql.svg" alt="Postgres SQL" />
           <span className="tooltip">Postgres SQL</span>
         </li>
         <li className="skill">
-          <img src="/images/tools/firebase.svg"></img>
+          <img src="/images/tools/firebase.svg" alt="Firebase" />
           <span className="tooltip">Firebase</span>
         </li>
         <li className="skill">
-          <img src="/images/tools/javascript.svg"></img>
+          <img src="/images/tools/javascript.svg" alt="Javascript & Typescript" />
           <span className="tooltip">Javascript & Typescript</span>
         </li>
         <li className="skill">
-          <img src="/images/tools/react.svg"></img>
+          <img src="/images/tools/react.svg" alt="React" />
           <span className="tooltip">React</span>
         </li>
         <li className="skill">
-          <img src="/images/tools/c-sharp.svg"></img>
+          <img src="/images/tools/c-sharp.svg" alt="C#" title="C#" />
           <span className="tooltip">C#</span>
         </li>
         <li className="skill">
-          <img src="/images/tools/next-js.svg"></img>
+          <img src="/images/tools/next-js.svg" alt="NextJS" />
           <span className="tooltip">NextJS</span>
         </li>
       </ul>
@@ -51,7 +51,7 @@ const TAB_DATA = [
       <ul className="pl-2" id="education">
         <li className="skill">
           <a href="https://commons.wikimedia.org/wiki/File:Conestoga_College_logo.svg">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Conestoga_College_logo.svg"></img>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Conestoga_College_logo.svg" alt="Conestoga College" />
             <span className="tooltip">Conestoga College</span>
           </a>
         </li>
