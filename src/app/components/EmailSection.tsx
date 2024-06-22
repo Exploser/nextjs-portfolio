@@ -1,56 +1,109 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
+
+interface FormDetails {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+interface Status {
+  success: boolean;
+  message: string;
+}
 
 const EmailSection: React.FC = () => {
+  const formInitialDetails: FormDetails = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+  };
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [formDetails, setFormDetails] = useState<FormDetails>(formInitialDetails);
+  const [buttonText, setButtonText] = useState<string>('Send');
+  const [status, setStatus] = useState<Status>({ success: false, message: '' });
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [recaptchaVerified, setRecaptchaVerified] = useState<boolean>(false);
+  const recaptchaRef = useRef<ReCAPTCHA | null>(null);
+
+  const onFormUpdate = (category:any, value:any) => {
+    setFormDetails(prev => ({ ...prev, [category]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
+    if (!recaptchaVerified) {
+      setStatus({ success: false, message: 'Please complete the ReCAPTCHA to submit the form.' });
+      return;
+    };
     const target = e.target as typeof e.target & {
       email: { value: string };
       subject: { value: string };
       message: { value: string };
     };
 
-    const data = {
-      email: target.email.value,
-      subject: target.subject.value,
-      message: target.message.value,
-    };
-
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send/";
-
-    // Form the request for sending data to the server.
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
+    setIsSubmitting(true);
+    setButtonText('Sending...');
+    console.log('Form details:', formDetails);
 
     try {
-      const response = await fetch(endpoint, options);
-      const resData = await response.json();
+    console.log('HELLLo');
+      let response = await fetch("https://personal-blog-api-two.vercel.app/send-email", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+              firstName: formDetails.firstName,
+              lastName: formDetails.lastName,
+              email: formDetails.email,
+              message: formDetails.message,
+              phone: formDetails.phone
+           }),
+           credentials: 'include',
+      });
 
-      if (response.status === 200) {
-        console.log("Message sent.");
-        setEmailSubmitted(true);
+      let result = await response.json();
+
+      setIsSubmitting(false);
+
+      setButtonText("Send");
+
+      setFormDetails(formInitialDetails);
+
+      setRecaptchaVerified(false);
+
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+
+      if (response.ok) {
+          setStatus({ success: true, message: 'Message sent successfully' });
       } else {
-        console.error("Failed to send message:", resData.error);
+          setStatus({ success: false, message: result.message || 'Something went wrong, please try again later.' });
       }
     } catch (error) {
-      console.error("Error sending message:", error);
-    } finally {
-      setIsLoading(false);
+      console.error('Fetch error:', error);
+      setIsSubmitting(false);
+      setButtonText("Send");
+      setStatus({ success: false, message: 'Failed to send message. Please try again later.' });
     }
+  };
+
+  const handleRecaptcha = (value: any) => {
+    setRecaptchaVerified(!!value);
   };
 
   return (
@@ -80,7 +133,7 @@ const EmailSection: React.FC = () => {
           <p className="text-green-500 text-sm mt-2">Email sent successfully!</p>
         ) : (
           <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
+            <div>
               <label
                 htmlFor="email"
                 className="text-white block mb-2 text-sm font-medium"
@@ -88,12 +141,12 @@ const EmailSection: React.FC = () => {
                 Your email
               </label>
               <input
-                name="email"
                 type="email"
-                id="email"
+                value={formDetails.email}
+                placeholder="jacob@google.com"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
+                onChange={(e) => onFormUpdate('email', e.target.value)}
               />
             </div>
             <div className="mb-6">
@@ -119,21 +172,27 @@ const EmailSection: React.FC = () => {
               >
                 Message
               </label>
-              <textarea
-                name="message"
-                id="message"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
+            <textarea
+              rows={4}
+              value={formDetails.message}
+              placeholder="Hello, I'd like to chat about..."
+              id="message"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              onChange={(e) => onFormUpdate('message', e.target.value)}
+            />
             </div>
-            <button
-              type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-              disabled={isLoading}
-            >
-              {isLoading ? "Sending..." : "Send Message"}
-            </button>
+            <div className="flex flex-col justify-center items-center text-white">
+              {status.message && <span className={`message py-6 ${status.success ? "success status-txt" : "danger status-txt"}`}>{status.message}</span>}
+              <ReCAPTCHA ref={recaptchaRef} sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A' onChange={handleRecaptcha} />
+              <button
+                type="submit"
+                className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+                disabled={isSubmitting}
+              >
+                <span>{buttonText}</span>
+              </button>
+            </div>
           </form>
         )}
       </div>
