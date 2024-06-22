@@ -8,22 +8,22 @@ import Link from "next/link";
 
 const HeaderSection = () => {
   return (
-    <section className="lg:py-8">
-      <div className="flex flex-col sm:flex-row items-center">
+    <section className="lg:py-8 w-full">
+      <div className="flex flex-col sm:flex-row items-center text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="flex-1 text-center sm:text-left"
         >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="bg-clip-text text-6xl bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m{" "}
+          <h1 className="text-white mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl lg:leading-normal font-extrabold xs:min-h-[165px] min-w-full">
+            <span className="text-l sm:text-xl md:text-3xl lg:text-4xl xl:text-6xl block">
+              Hello,
             </span>
-            <span className="text-animation">Abhijeet</span>
-            <br></br>
-            <div className="h-64 flex items-center text-8xl">
-            {/* a &nbsp; */}
+            <span className="block w-full mt-8 lg:mt-12 md:mt-6 sm:mt-6">
+              I&apos;m<span className="text-animation"> Abhijeet</span>
+            </span>
+            <div className="flex items-start justify-start w-full sm:h-[100px] md:h-[100px] lg:h-[250px] mt-8 lg:mt-12 md:mt-6 sm:mt-6 xs:mt-6">
               <TypeAnimation
                 sequence={[
                   "Web Developer",
@@ -39,12 +39,12 @@ const HeaderSection = () => {
                 speed={1}
                 deletionSpeed={1}
                 repeat={Infinity}
-                className="lg"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl"
                 cursor={true}
               />
             </div>
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl mt-8">
+          <p className="text-[#ADB7BE] text-base xs:text-xs sm:text-lg mb-6 lg:text-xl mt-8 w-full">
             Specializing in writing clean, decoupled, and testable code. Skilled in Object-Oriented Programming and versed in Agile and SCRUM methodologies. Committed to continuous learning.
           </p>
           <div>
@@ -71,7 +71,7 @@ const HeaderSection = () => {
           className="flex-1 mt-4 lg:mt-0 flex justify-center"
         >
           <div className="relative rounded-full bg-[#d65a5a] w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]"
-          id="header-bg">
+            id="header-bg">
             <Image
               src="/images/header-img1.svg"
               alt="hero image"
