@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import GitHubCalendar from 'react-github-calendar';
+import { useDarkMode } from "../context/DarkModeContext";
 
 interface GitHubUser {
   login: string;
@@ -44,6 +45,7 @@ const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
 });
 
 const AchievementsSection = () => {
+  const { darkMode } = useDarkMode();
   const [profilePicture, setProfilePicture] = useState("");
   const [username, setUsername] = useState("exploser");
   const [achievementsList, setAchievementsList] = useState([
@@ -104,36 +106,35 @@ const AchievementsSection = () => {
 
   return (
     <section className="w-full my-20">
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 w-full">
-      <span className="text-white text-3xl font-bold pb-4 text-animation-small ml-8">My GitHub Contributions,</span>
-      <div className="flex justify-center items-center bg-gray-800 p-4 sm:border-[#33353F] rounded-md mt-4">
-        <div className="text-center mr-4">
-          <img src={profilePicture} className="w-32 h-32 rounded-full"></img>
-          <span className="text-white text-2xl font-bold pt-2">{username}</span>
-        </div>
-        <GitHubCalendar username="exploser" colorScheme="dark" />
-      </div>
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
-        {achievementsList.map((achievement, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
-          >
-            <h2 className="text-white text-4xl font-bold flex flex-row">
-              {achievement.prefix}
-              <AnimatedNumbers
-                includeComma
-                animateToNumber={parseInt(achievement.value)}
-                locale="en-US"
-                className="text-white text-4xl font-bold"
-              />
-              {achievement.postfix}
-            </h2>
-            <p className="text-[#ADB7BE] text-base">{achievement.metric}</p>
+      <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 w-full">
+        <span className={`text-3xl font-bold pb-4 ml-8 ${darkMode ? 'text-animation-small' : 'text-slate-800'}`}>
+          My GitHub Contributions,
+        </span>
+        <div className={`flex justify-center items-center p-4 sm:border rounded-md mt-4 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-gray-600 border-gray-300'}`}>
+          <div className="text-center mr-4">
+            <img src={profilePicture} className="w-32 h-32 rounded-full" alt="Profile"></img>
+            <span className={`text-2xl font-bold pt-2 ${darkMode ? 'text-white' : 'text-slate-300'}`}>{username}</span>
           </div>
-        ))}
+          <GitHubCalendar username="exploser" colorScheme={darkMode ? "dark" : "light"} />
+        </div>
+        <div className={`sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-300 bg-white'}`}>
+          {achievementsList.map((achievement, index) => (
+            <div key={index} className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0">
+              <h2 className={`text-4xl font-bold flex flex-row ${darkMode ? 'text-white' : 'text-black'}`}>
+                {achievement.prefix}
+                <AnimatedNumbers
+                  includeComma
+                  animateToNumber={parseInt(achievement.value)}
+                  locale="en-US"
+                  className={`text-4xl font-bold`}
+                />
+                {achievement.postfix}
+              </h2>
+              <p className={`text-base ${darkMode ? 'text-[#ADB7BE]' : 'text-gray-700'}`}>{achievement.metric}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </section>
   );
 };
