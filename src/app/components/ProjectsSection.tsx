@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import { useDarkMode } from "../context/DarkModeContext";
 
 const projectsData = [
   {
@@ -54,8 +55,9 @@ const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const { darkMode } = useDarkMode();
 
-  const handleTagChange = (newTag: React.SetStateAction<string>) => {
+  const handleTagChange = (newTag: string) => {
     setTag(newTag);
   };
 
@@ -69,26 +71,28 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="my-20">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12 text-animation-small">
+    <section id="projects" className={`my-20 ${darkMode ? 'bg-dark text-white' : 'bg-light text-black'}`}>
+      <h2 className={`text-start ml-28 sm:ml-0 text-4xl font-bold mt-4 mb-8 md:mb-12 ${darkMode ? 'text-animation-small' : 'text-slate-700'}`}>
         Things that I have made,
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="3D Models"
-          isSelected={tag === "3D Models"}
-        />
+      <div className={`flex flex-row justify-center items-center gap-2 py-6 w-full`}>
+        <div className={`p-4 rounded-xl ${darkMode ? 'text-white' : 'bg-black bg-opacity-20'}`}>
+          <ProjectTag
+            onClick={() => handleTagChange("All")}
+            name="All"
+            isSelected={tag === "All"}
+          />
+          <ProjectTag
+            onClick={() => handleTagChange("Web")}
+            name="Web"
+            isSelected={tag === "Web"}
+          />
+          <ProjectTag
+            onClick={() => handleTagChange("3D Models")}
+            name="3D Models"
+            isSelected={tag === "3D Models"}
+          />
+        </div>
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
