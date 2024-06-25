@@ -3,10 +3,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer w-screen border z-10 border-t-[#33353F] border-l-transparent border-r-transparent border-b-transparent text-white">
-      <div className="container p-8 flex justify-between items-center">
+    <footer className="footer w-screen bg-[#1a1a1a] border-t border-t-[#33353F] text-white">
+      <div className="container mx-auto p-6 flex flex-col md:flex-row justify-between items-center">
         <Image src="/logo.svg" alt="Exploser Logo" width={60} height={60} />
-        <p className="text-slate-600">All rights reserved.</p>
+        <p className="text-slate-400 mt-4 md:mt-0">Icons by @<a className="underline" href="https://www.svgrepo.com/">SVGRepo</a> </p>
       </div>
     </footer>
   );

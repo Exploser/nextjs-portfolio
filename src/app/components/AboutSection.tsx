@@ -84,7 +84,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white min-h-fit flex flex-col" id="about">
+    <section className="text-white min-h-fit flex flex-col my-20" id="about">
       <h2 className="text-4xl font-bold text-white ml-28"><span className="text-animation-small">Who am I ?</span>,</h2>
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-8 xl:px-8">
         <Image alt='About Me' src="/images/header-img2.svg" width={500} height={500} />
