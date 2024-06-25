@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <DarkModeProvider>{/* Wrap the children with the provider */}
         <Navbar />
         {children}
+        </DarkModeProvider>
       </body>
     </html>
   );

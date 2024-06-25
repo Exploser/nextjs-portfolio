@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import Navlink from "./Navlink";
 import MenuOverlay from "./MenuOverlay";
 import Image from "next/image";
+import { useDarkMode } from "../context/DarkModeContext";
 
 const navLinks = [
   {
@@ -24,6 +25,7 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { darkMode, toggleDarkMode } = useDarkMode();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -81,6 +83,9 @@ const Navbar = () => {
                 <Navlink href={link.path} title={link.title} />
               </li>
             ))}
+            <button onClick={toggleDarkMode} className="ml-4 p-2">
+              {darkMode ? <SunIcon className="h-6 w-6 text-yellow-500" /> : <MoonIcon className="h-6 w-6 text-gray-500" />}
+            </button>
           </ul>
         </div>
       </div>
