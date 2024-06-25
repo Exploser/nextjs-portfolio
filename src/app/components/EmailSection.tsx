@@ -5,6 +5,7 @@ import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useDarkMode } from "../context/DarkModeContext";
 
 interface FormDetails {
   firstName: string;
@@ -35,8 +36,9 @@ const EmailSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [recaptchaVerified, setRecaptchaVerified] = useState<boolean>(false);
   const recaptchaRef = useRef<ReCAPTCHA | null>(null);
+  const { darkMode } = useDarkMode();
 
-  const onFormUpdate = (category:any, value:any) => {
+  const onFormUpdate = (category: keyof FormDetails, value: string) => {
     setFormDetails(prev => ({ ...prev, [category]: value }));
   };
 
@@ -47,32 +49,27 @@ const EmailSection: React.FC = () => {
       setStatus({ success: false, message: 'Please complete the ReCAPTCHA to submit the form.' });
       return;
     };
-    const target = e.target as typeof e.target & {
-      email: { value: string };
-      subject: { value: string };
-      message: { value: string };
-    };
 
     setIsSubmitting(true);
     setButtonText('Sending...');
     console.log('Form details:', formDetails);
 
     try {
-    console.log('HELLLo');
+      console.log('HELLLo');
       let response = await fetch("https://personal-blog-api-two.vercel.app/send-email", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-              'Accept': 'application/json',
-          },
-          body: JSON.stringify({
-              firstName: formDetails.firstName,
-              lastName: formDetails.lastName,
-              email: formDetails.email,
-              message: formDetails.message,
-              phone: formDetails.phone
-           }),
-           credentials: 'include',
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formDetails.firstName,
+          lastName: formDetails.lastName,
+          email: formDetails.email,
+          message: formDetails.message,
+          phone: formDetails.phone
+        }),
+        credentials: 'include',
       });
 
       let result = await response.json();
@@ -90,9 +87,9 @@ const EmailSection: React.FC = () => {
       }
 
       if (response.ok) {
-          setStatus({ success: true, message: 'Message sent successfully' });
+        setStatus({ success: true, message: 'Message sent successfully' });
       } else {
-          setStatus({ success: false, message: result.message || 'Something went wrong, please try again later.' });
+        setStatus({ success: false, message: result.message || 'Something went wrong, please try again later.' });
       }
     } catch (error) {
       console.error('Fetch error:', error);
@@ -109,22 +106,23 @@ const EmailSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 md:my-12 pt-24 gap-4 relative mt-20 "
+      className={`grid md:grid-cols-2 md:my-12 pt-24 gap-4 relative mt-20 ${darkMode ? 'text-white' : 'text-blue-800'}`}
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <span className="text-white text-2xl font-bold pb-4 text-animation-small my-2 mb-2">Connect with Me,</span>
-        <p className="text-[#ADB7BE] m-4 max-w-md">
+        <span className={`text-2xl font-bold pb-4 my-2 mb-2 ${darkMode ? 'text-animation-small' : 'text-slate-900'}`}>
+          Connect with Me,
+        </span>
+        <p className={`m-4 max-w-md ${darkMode ? 'text-[#ADB7BE]' : 'text-slate-700'}`}>
           I&apos;m currently looking for new opportunities, my inbox is always open.
           Whether you have a question or just want to say hi, I&apos;ll try my best
           to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <Image src={GithubIcon} alt="Github Icon" />
+          <Link href="https://github.com/Exploser" target="_blank" rel="noopener noreferrer">
+            <img src={`${darkMode? '/icons/light-gh-icon.svg' : '/icons/dark-gh-icon.svg'}`} alt="Github" className="w-12 h-12 mx-4"/>
           </Link>
-          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          <Link href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <img src={`${darkMode? '/icons/dark-yt-icon.svg': '/icons/light-yt-icon.svg' }`} alt="Youtube" className="w-12 h-12 mx-4"/>
           </Link>
         </div>
       </div>
@@ -136,7 +134,7 @@ const EmailSection: React.FC = () => {
             <div>
               <label
                 htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
+                className={`block mb-2 text-sm font-medium ${darkMode ? 'text-white' : 'text-slate-700'}`}
               >
                 Your email
               </label>
@@ -145,14 +143,14 @@ const EmailSection: React.FC = () => {
                 value={formDetails.email}
                 placeholder="jacob@google.com"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className={`border rounded-lg block w-full p-2.5 ${darkMode ? 'bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100' : 'bg-white border-gray-300 placeholder-gray-500 text-slate-700'}`}
                 onChange={(e) => onFormUpdate('email', e.target.value)}
               />
             </div>
             <div className="mb-6">
               <label
                 htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
+                className={`block text-sm mb-2 font-medium ${darkMode ? 'text-white' : 'text-slate-700'}`}
               >
                 Subject
               </label>
@@ -161,14 +159,14 @@ const EmailSection: React.FC = () => {
                 type="text"
                 id="subject"
                 required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+                className={`border rounded-lg block w-full p-2.5 ${darkMode ? 'bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100' : 'bg-white border-gray-300 placeholder-gray-500 text-slate-700'}`}
                 placeholder="Just saying hi"
               />
             </div>
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
+                className={`block text-sm mb-2 font-medium ${darkMode ? 'text-white' : 'text-slate-700'}`}
               >
                 Message
               </label>
@@ -178,16 +176,16 @@ const EmailSection: React.FC = () => {
               placeholder="Hello, I'd like to chat about..."
               id="message"
               required
-              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              className={`border rounded-lg block w-full p-2.5 ${darkMode ? 'bg-[#18191E] border-[#33353F] placeholder-[#9CA2A9] text-gray-100' : 'bg-white border-gray-300 placeholder-gray-500 text-slate-700'}`}
               onChange={(e) => onFormUpdate('message', e.target.value)}
             />
             </div>
-            <div className="flex flex-col justify-center items-center text-white">
-              {status.message && <span className={`message py-6 ${status.success ? "success status-txt" : "danger status-txt"}`}>{status.message}</span>}
+            <div className="flex flex-col justify-center items-center">
+              {status.message && <span className={`message py-6 ${status.success ? "text-green-500" : "text-red-500"}`}>{status.message}</span>}
               <ReCAPTCHA ref={recaptchaRef} sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A' onChange={handleRecaptcha} />
               <button
                 type="submit"
-                className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+                className={`font-medium py-2.5 px-5 rounded-lg w-full mt-4 ${darkMode ? 'bg-primary-500 hover:bg-primary-600 text-white' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
                 disabled={isSubmitting}
               >
                 <span>{buttonText}</span>

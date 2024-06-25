@@ -7,6 +7,8 @@
   --background-start-rgb: 122, 122, 122;
   --background-end-rgb: 122, 122, 122;
   --background-color: #121212;
+  --light-text-color: #121212;
+  --light-bg-color: #f3f4f6;
   box-sizing: border-box;
 }
 
@@ -18,9 +20,13 @@
   }
 }
 
-body {
+.dark{
   color: rgb(var(--foreground-rgb));
   background-color: var(--background-color);
+}
+.light{
+  color: rgb(var(--foreground-rgb));
+  background-color: var(--light-bg-color);
 }
 
 @layer utilities {
