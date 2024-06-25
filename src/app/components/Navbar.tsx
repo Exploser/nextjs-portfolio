@@ -47,7 +47,7 @@ const Navbar = () => {
         <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className={`text-2xl md:text-5xl font-semibold${scrolled? 'text-black' : 'text-white'}`}
+          className={`text-2xl md:text-5xl font-semibold ${scrolled? 'text-black' : 'text-white'}`}
         >
           <div className={`logo ${scrolled ? 'items-center justify-center' : 'hidden'}`}>
             <Image
@@ -57,7 +57,9 @@ const Navbar = () => {
               height={40}
             />
           </div>
-          <span className={`text-2xl font-semibold whitespace-nowrap dark ${scrolled ? 'hidden' : ''}`}>Exploser</span>
+          <span className={`text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-transparent ${scrolled ? 'hidden' : ''}`}>
+            Exploser
+          </span>
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
