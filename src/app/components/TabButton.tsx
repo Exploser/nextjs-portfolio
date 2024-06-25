@@ -10,16 +10,16 @@ const TabButton = ({ active, selectTab, children }: { active: boolean, selectTab
   const buttonClasses = active ? "text-white" : "text-[#ADB7BE]";
 
   return (
-    <button onClick={selectTab}>
-      <p className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}>
+    <button onClick={selectTab} className="relative flex flex-col items-center justify-center h-8">
+      <p className={`font-semibold hover:text-primary-500 ${buttonClasses}`}>
         {children}
       </p>
       <motion.div
         animate={active ? "active" : "default"}
         variants={variants}
-        className="h-1 bg-primary-500 mt-2 mr-3"
-      >
-      </motion.div>
+        transition={{ duration: 0.9 }}
+        className="h-1 bg-primary-500 w-full absolute bottom-0"
+      ></motion.div>
     </button>
   );
 };

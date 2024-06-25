@@ -106,7 +106,7 @@ const EmailSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className={`grid md:grid-cols-2 md:my-12 pt-24 gap-4 relative mt-20 ${darkMode ? 'text-white' : 'text-blue-800'}`}
+      className={`grid md:grid-cols-2 md:my-12 pt-24 gap-4 relative mt-20 ${darkMode ? 'text-white' : 'text-slate-700'}`}
     >
       <div className="z-10">
         <span className={`text-2xl font-bold pb-4 my-2 mb-2 ${darkMode ? 'text-animation-small' : 'text-slate-900'}`}>

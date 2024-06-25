@@ -2,6 +2,7 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { useDarkMode } from "../context/DarkModeContext";
 
 const TAB_DATA = [
   {
@@ -73,9 +74,11 @@ const TAB_DATA = [
   },
 ];
 
+
 const AboutSection = () => {
   const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
+  const { darkMode } = useDarkMode();
 
   const handleTabChange = (id: string) => {
     startTransition(() => {
@@ -84,9 +87,11 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white min-h-fit flex flex-col my-20" id="about">
-      <h2 className="text-4xl font-bold text-white ml-28"><span className="text-animation-small">Who am I ?</span>,</h2>
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-8 xl:px-8">
+    <section className={`min-h-fit flex flex-col my-20 ${darkMode ? 'text-white' : 'text-black'}`} id="about">
+      <h2 className="text-4xl font-bold ml-28">
+        <span className={darkMode? `text-animation-small` : 'text-slate-700'}>Who am I?</span>,
+      </h2>
+      <div className={`md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-8 xl:px-8`}>
         <Image alt='About Me' src="/images/header-img2.svg" width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <p className="text-base lg:text-lg">
@@ -97,33 +102,34 @@ const AboutSection = () => {
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>
-          <div className="flex flex-row justify-between mt-8">
+          <div className={`flex flex-row justify-between mt-8 px-12 rounded-xl items-center bg-opacity-35 ${darkMode? 'bg-none' : 'bg-black'}`} >
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("content")}
               active={tab === "content"}
             >
-              {" "}
-              Content{" "}
+              Content
             </TabButton>
           </div>
           <div className="mt-2">
-            {/* Add a Spinner Here */}
-            {isPending ? "Loading..." : null}
-            {TAB_DATA.find((t) => t.id === tab)?.content}
+            {isPending ? (
+              <div className="flex justify-center items-center">
+                <div className="spinner"></div>
+              </div>
+            ) : (
+              TAB_DATA.find((t) => t.id === tab)?.content
+            )}
           </div>
         </div>
       </div>
