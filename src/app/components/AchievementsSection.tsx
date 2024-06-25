@@ -104,7 +104,7 @@ const AchievementsSection = () => {
 
   return (
     <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 w-full">
-      <span className="text-white text-2xl font-bold pb-4">My GitHub Contributions,</span>
+      <span className="text-white text-3xl font-bold pb-4 text-animation-small ml-8">My GitHub Contributions,</span>
       <div className="flex justify-center items-center bg-gray-800 p-4 sm:border-[#33353F] rounded-md mt-4">
         <div className="text-center mr-4">
           <img src={profilePicture} className="w-32 h-32 rounded-full"></img>
