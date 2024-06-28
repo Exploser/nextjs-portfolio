@@ -122,7 +122,7 @@ const AboutSection = () => {
               Content
             </TabButton>
           </div>
-          <div className="mt-2">
+          <div className="mt-8">
             {isPending ? (
               <div className="flex justify-center items-center">
                 <div className="spinner"></div>
