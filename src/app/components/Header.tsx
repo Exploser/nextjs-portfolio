@@ -22,7 +22,7 @@ const HeaderSection = () => {
             <span className="text-l sm:text-xl md:text-3xl lg:text-4xl xl:text-6xl block">
               Hello,
             </span>
-            <span className="block w-full mt-8 lg:mt-12 md:mt-6 sm:mt-6">
+            <span className="block text-7xl w-full mt-8 lg:mt-12 md:mt-6 sm:mt-6">
               I&apos;m<span className={`${darkMode? 'text-animation' : 'text-slate-800'}`}> Abhijeet</span>
             </span>
             <div className="flex items-start justify-start w-full sm:h-[100px] md:h-[100px] lg:h-[250px] mt-8 lg:mt-12 md:mt-6 sm:mt-6 xs:mt-6">
