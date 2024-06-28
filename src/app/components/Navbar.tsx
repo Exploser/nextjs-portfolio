@@ -57,7 +57,7 @@ const Navbar = () => {
               height={40}
             />
           </div>
-          <span className={`text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-transparent ${scrolled ? 'hidden' : ''}`}>
+          <span className={`text-2xl font-semibold bg-clip-text text-transparent ${darkMode?'bg-gradient-to-tr from-slate-400 to-transparent' : 'bg-gradient-to-r from-slate-800 to-transparent'} ${scrolled ? 'hidden' : ''}`}>
             Exploser
           </span>
         </Link>
