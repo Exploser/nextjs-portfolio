@@ -4,81 +4,81 @@ import Image from "next/image";
 import TabButton from "./TabButton";
 import { useDarkMode } from "../context/DarkModeContext";
 
-const TAB_DATA = [
-  {
-    title: "Skills",
-    id: "skills",
-    content: (
-      <ul className="pl-2" id="skills">
-        <li className="skill">
-          <img src="/images/tools/node-js.svg" alt="Node JS" />
-          <span className="tooltip">NodeJS</span>
-        </li>
-        <li className="skill">
-          <img src="/images/tools/express-js.svg" alt="Express JS" />
-          <span className="tooltip">Express</span>
-        </li>
-        <li className="skill">
-          <img src="/images/tools/postgres-sql.svg" alt="Postgres SQL" />
-          <span className="tooltip">Postgres SQL</span>
-        </li>
-        <li className="skill">
-          <img src="/images/tools/firebase.svg" alt="Firebase" />
-          <span className="tooltip">Firebase</span>
-        </li>
-        <li className="skill">
-          <img src="/images/tools/javascript.svg" alt="Javascript & Typescript" />
-          <span className="tooltip">Javascript & Typescript</span>
-        </li>
-        <li className="skill">
-          <img src="/images/tools/react.svg" alt="React" />
-          <span className="tooltip">React</span>
-        </li>
-        <li className="skill">
-          <img src="/images/tools/c-sharp.svg" alt="C#" title="C#" />
-          <span className="tooltip">C#</span>
-        </li>
-        <li className="skill">
-          <img src="/images/tools/next-js.svg" alt="NextJS" />
-          <span className="tooltip">NextJS</span>
-        </li>
-      </ul>
-    ),
-  },
-  {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="pl-2" id="education">
-        <li className="skill">
-          <a href="https://commons.wikimedia.org/wiki/File:Conestoga_College_logo.svg">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Conestoga_College_logo.svg" alt="Conestoga College" />
-            <span className="tooltip">Conestoga College</span>
-          </a>
-        </li>
-        <li className="skill">
-          Software Engineering Technology Advanced Diploma
-        </li>
-      </ul>
-    ),
-  },
-  {
-    title: "Content",
-    id: "content",
-    content: (
-      <ul className="list-disc pl-2">
-        <li className="skill">AWS Cloud Practitioner</li>
-        <li className="skill">Google Professional Cloud Developer</li>
-      </ul>
-    ),
-  },
-];
-
-
 const AboutSection = () => {
+
   const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
   const { darkMode } = useDarkMode();
+
+  const TAB_DATA = [
+    {
+      title: "Skills",
+      id: "skills",
+      content: (
+        <ul className="pl-2" id="skills">
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/node-js.svg" : "/images/tools/node-js-dark.svg" }`} alt="Node JS" />
+            <span className="tooltip">NodeJS</span>
+          </li>
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/express-js.svg" : "/images/tools/express-js-dark.svg"}`} alt="Express JS" />
+            <span className="tooltip">Express</span>
+          </li>
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/postgre-sql.svg" : "/images/tools/postgre-sql-dark.svg"}`} alt="Postgres SQL" />
+            <span className="tooltip">Postgres SQL</span>
+          </li>
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/firebase.svg" : "/images/tools/firebase-dark.svg"}`} alt="Firebase" />
+            <span className="tooltip">Firebase</span>
+          </li>
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/javascript.svg" : "/images/tools/javascript-dark.svg"}`} alt="Javascript & Typescript" />
+            <span className="tooltip">Javascript & Typescript</span>
+          </li>
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/react.svg" : "/images/tools/react-dark.svg"}`} alt="React" />
+            <span className="tooltip">React</span>
+          </li>
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/c-sharp.svg" : "/images/tools/c-sharp-dark.svg"}`} alt="C#" title="C#" />
+            <span className="tooltip">C#</span>
+          </li>
+          <li className="skill">
+            <img src={`${darkMode? "/images/tools/next-js.svg" : "/images/tools/next-js-dark.svg"}`} alt="NextJS" />
+            <span className="tooltip">NextJS</span>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      title: "Education",
+      id: "education",
+      content: (
+        <ul className="pl-2" id="education">
+          <li className="skill">
+            <a href="https://commons.wikimedia.org/wiki/File:Conestoga_College_logo.svg">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Conestoga_College_logo.svg" alt="Conestoga College" />
+              <span className="tooltip">Conestoga College</span>
+            </a>
+          </li>
+          <li className="skill">
+            Software Engineering Technology Advanced Diploma
+          </li>
+        </ul>
+      ),
+    },
+    {
+      title: "Content",
+      id: "content",
+      content: (
+        <ul className="list-disc pl-2">
+          <li className="skill">AWS Cloud Practitioner</li>
+          <li className="skill">Google Professional Cloud Developer</li>
+        </ul>
+      ),
+    },
+  ];
 
   const handleTabChange = (id: string) => {
     startTransition(() => {
