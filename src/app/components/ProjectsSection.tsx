@@ -54,7 +54,7 @@ const projectsData = [
     title: "Sort-my-stuff: Simple File Organizer",
     description: "A file organizer that sorts your files based on their type.",
     image: "/images/projects/sort-my-stuff.jpg",
-    tag: ["All", "Web"],
+    tag: ["All", "Software"],
     gitUrl: "https://github.com/Exploser/sort-my-files",
   }
 ];
@@ -99,6 +99,11 @@ const ProjectsSection = () => {
             onClick={() => handleTagChange("3D Models")}
             name="3D Models"
             isSelected={tag === "3D Models"}
+          />
+          <ProjectTag
+            onClick={() => handleTagChange("Software")}
+            name="Software"
+            isSelected={tag === "Software"}
           />
         </div>
       </div>
