@@ -111,7 +111,7 @@ const AchievementsSection = () => {
         <div className={`flex justify-center items-center p-4 sm:border rounded-md mt-4 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-gray-600 border-gray-300'}`}>
           <div className="text-center mr-4">
             <img src={profilePicture} className="w-32 h-32 rounded-full" alt="Profile"></img>
-            <span className={`text-2xl font-bold pt-2 ${darkMode ? 'text-white' : 'text-slate-300'}`}>{username}</span>
+            <a href="https://github.com/Exploser"><span className={`text-2xl font-bold pt-2 ${darkMode ? 'text-white' : 'text-slate-300'}`}>@{username}</span></a>
           </div>
           <GitHubCalendar username="exploser" colorScheme={darkMode ? "dark" : "light"} />
         </div>
