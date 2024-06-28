@@ -80,10 +80,8 @@ const AchievementsSection = () => {
           {
             metric: "Projects",
             value: data.public_repos.toString(),
-            postfix: "+",
           },
           {
-            prefix: "~",
             metric: "Followers",
             value: data.followers.toString(),
           },
