@@ -34,6 +34,14 @@ const projectsData = [
   },
   {
     id: 4,
+    title: "Cling Disk: Hard Drive Wallmount",
+    description: "A simple wall mount for displaying and storing your hard drives.",
+    image: "/images/projects/cling-disk.jpg",
+    tag: ["All", "3D Models"],
+    previewUrl: "https://than.gs/m/1056499",
+  },
+  {
+    id: 4,
     title: "Keep It Up: Keyboard Wallmount",
     description: "A simple wall mount for displaying and storing your keyboard.",
     image: "/images/projects/keep-it-up.jpeg",
