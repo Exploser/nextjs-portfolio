@@ -8,12 +8,11 @@ import { useDarkMode } from "../context/DarkModeContext";
 const projectsData = [
   {
     id: 1,
-    title: "TacoTunes: Find new music!",
-    description: "Spotify Web API project to find new music based on your taste.",
-    image: "/images/projects/Taco-Tunes.jpg",
+    title: "Tweet Ahead: Twitter Scheduler",
+    description: "Schedule your tweets ahead of time",
+    image: "/images/projects/Tweet-Ahead.jpg",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/Exploser/SpotiShare",
-    previewUrl: "https://wrapifer.vercel.app/",
+    previewUrl: "https://github.com/Exploser/Posts-Scheduler",
   },
   {
     id: 2,
@@ -43,12 +42,21 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "Tweet Ahead: Twitter Scheduler",
-    description: "Schedule your tweets ahead of time",
-    image: "/images/projects/Tweet-Ahead.jpg",
+    title: "TacoTunes: Find new music!",
+    description: "Spotify Web API project to find new music based on your taste.",
+    image: "/images/projects/Taco-Tunes.jpg",
     tag: ["All", "Web"],
-    previewUrl: "https://github.com/Exploser/Posts-Scheduler",
+    gitUrl: "https://github.com/Exploser/SpotiShare",
+    previewUrl: "https://wrapifer.vercel.app/",
   },
+  {
+    id: 6,
+    title: "Sort-my-stuff: Simple File Organizer",
+    description: "A file organizer that sorts your files based on their type.",
+    image: "/images/projects/sort-my-stuff.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Exploser/sort-my-files",
+  }
 ];
 
 const ProjectsSection = () => {
@@ -95,7 +103,7 @@ const ProjectsSection = () => {
         </div>
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
+        {filteredProjects.slice().reverse().map((project, index) => (
           <motion.li
             key={index}
             variants={cardVariants}
