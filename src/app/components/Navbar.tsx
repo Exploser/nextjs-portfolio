@@ -58,7 +58,7 @@ const Navbar = () => {
             />
           </div>
           <span className={`flex text-2xl font-semibold bg-clip-text text-center text-transparent ${darkMode?'bg-gradient-to-tr from-slate-400 to-transparent' : 'bg-gradient-to-r from-slate-800 to-transparent'} ${scrolled ? 'hidden' : ''}`}>
-            Exp/loser
+            {darkMode? 'Exp/loser' : 'Ex-l0ser'}
           </span>
         </Link>
         <div className="mobile-menu block md:hidden">

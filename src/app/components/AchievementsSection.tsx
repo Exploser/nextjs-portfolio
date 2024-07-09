@@ -105,7 +105,7 @@ const AchievementsSection = () => {
   return (
     <section className="w-full my-20">
       <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 w-full">
-        <span className={`text-3xl font-bold pb-4 ml-8 ${darkMode ? 'text-animation-small' : 'text-slate-800'}`}>
+        <span className={`text-3xl font-bold pb-4 ml-8 ${darkMode ? 'text-animation-small' : 'text-animation-small-light'}`}>
           My GitHub Contributions,
         </span>
         <div className={`flex justify-center items-center p-4 sm:border rounded-md mt-4 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-gray-600 border-gray-300'}`}>

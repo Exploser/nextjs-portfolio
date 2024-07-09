@@ -88,7 +88,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className={`my-20 ${darkMode ? 'bg-dark text-white' : 'bg-light text-black'}`}>
-      <h2 className={`text-start ml-28 sm:ml-0 text-4xl font-bold mt-4 mb-8 md:mb-12 ${darkMode ? 'text-animation-small' : 'text-slate-700'}`}>
+      <h2 className={`text-start ml-28 sm:ml-0 text-4xl font-bold mt-4 mb-8 md:mb-12 ${darkMode ? 'text-animation-small' : 'text-animation-small-light'}`}>
         Things that I have made,
       </h2>
       <div className={`flex flex-row justify-center items-center gap-2 py-6 w-full`}>
