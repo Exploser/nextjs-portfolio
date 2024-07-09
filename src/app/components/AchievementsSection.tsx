@@ -113,7 +113,7 @@ const AchievementsSection = () => {
             <img src={profilePicture} className="w-32 h-32 rounded-full" alt="Profile"></img>
             <a href="https://github.com/Exploser"><span className={`text-2xl font-bold pt-2 ${darkMode ? 'text-white' : 'text-slate-300'}`}>@{username}</span></a>
           </div>
-          <GitHubCalendar username="exploser" colorScheme={darkMode ? "dark" : "light"} />
+          <GitHubCalendar year={2024} username="exploser" colorScheme={darkMode ? "dark" : "light"} />
         </div>
         <div className={`sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-300 bg-white'}`}>
           {achievementsList.map((achievement, index) => (
