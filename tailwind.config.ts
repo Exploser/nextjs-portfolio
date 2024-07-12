@@ -18,6 +18,9 @@ const config: Config = {
       },
     },
   },
+  variants: {
+    display: ['responsive'],
+  },
   plugins: [],
 };
 export default config;
