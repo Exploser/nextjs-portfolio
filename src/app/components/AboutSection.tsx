@@ -89,7 +89,7 @@ const AboutSection = () => {
   return (
     <section className={`min-h-fit flex flex-col md:my-20 lg:my-20 my-0 ${darkMode ? 'text-white' : 'text-black'}`} id="about">
       <h2 className="text-4xl font-bold md:ml-28 lg:ml-28 sm:m-0">
-        <span className={' ' + darkMode? `text-animation-small` : 'text-animation-small-light'}>Who am I?</span>,
+        <span className={darkMode ? 'text-animation-small' : 'text-animation-small-light'}>Who am I?</span>,
       </h2>
       <div className={`md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-8 xl:px-8`}>
         <Image alt='About Me' src="/images/header-img2.svg" width={500} height={500} />
