@@ -8,7 +8,7 @@ type Link = {
 
 const MenuOverlay = ({ links }: { links: Link[] }) => {
   return (
-    <ul className="flex flex-col py-4 items-center">
+    <ul className="flex flex-col py-2 items-center h-full">
       {links.map((link, index) => (
         <li key={index}>
           <Navlink href={link.path} title={link.title} />
