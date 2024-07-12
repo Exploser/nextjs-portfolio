@@ -25,7 +25,7 @@ const HeaderSection = () => {
             <span className="block text-7xl w-full mt-8 lg:mt-12 md:mt-6 sm:mt-6">
               I&apos;m<span className={`${darkMode? 'text-animation' : 'text-animation-light'}`}> Abhijeet</span>
             </span>
-            <div className="flex items-start justify-start w-full sm:h-[100px] md:h-[100px] lg:h-[250px] mt-8 lg:mt-12 md:mt-6 sm:mt-6 xs:mt-6">
+            <div className="flex items-start justify-start w-full sm:h-[100px] md:h-[100px] lg:h-[250px] mt-8 lg:mt-12 md:mt-6 sm:mt-6 xs:mt-6 sm:justify-center xs:justify-center">
               <TypeAnimation
                 sequence={[
                   "Web Developer",
@@ -41,7 +41,7 @@ const HeaderSection = () => {
                 speed={1}
                 deletionSpeed={1}
                 repeat={Infinity}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl sm:text-center"
                 cursor={true}
               />
             </div>
