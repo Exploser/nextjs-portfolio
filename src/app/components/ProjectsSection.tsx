@@ -67,6 +67,15 @@ const projectsData = [
   },
   {
     id: 7,
+    title: "Sorting Visualizer: Interactive Sorting Algorithm Web App",
+    description: "An interactive web application to visualize various sorting algorithms",
+    image: "/images/projects/sorting-visualizer.jpeg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Exploser/algorithm-visualizer",
+    previewUrl: "https://loser-algorithm-visualiser.vercel.app/",
+  },
+  {
+    id: 8,
     title: "Loser AI: Multi Modal AI Generator",
     description: "A multi modal AI generator that generates text, images, music and video.",
     image: "/images/projects/loser-ai.png",
