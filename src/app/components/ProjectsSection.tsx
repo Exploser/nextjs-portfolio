@@ -64,6 +64,15 @@ const projectsData = [
     image: "/images/projects/sort-my-stuff.jpg",
     tag: ["All", "Software"],
     gitUrl: "https://github.com/Exploser/sort-my-files",
+  },
+  {
+    id: 7,
+    title: "Loser AI: Multi Modal AI Generator",
+    description: "A multi modal AI generator that generates text, images, music and video.",
+    image: "/images/projects/loser-ai.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Exploser/Loser-AI",
+    previewUrl: "https://loserai.vercel.app/",
   }
 ];
 
