@@ -87,7 +87,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className={`min-h-fit flex flex-col my-20 ${darkMode ? 'text-white' : 'text-black'}`} id="about">
+    <section className={`min-h-fit flex flex-col md:my-20 lg:my-20 my-0 ${darkMode ? 'text-white' : 'text-black'}`} id="about">
       <h2 className="text-4xl font-bold md:ml-28 lg:ml-28 sm:m-0">
         <span className={' ' + darkMode? `text-animation-small` : 'text-animation-small-light'}>Who am I?</span>,
       </h2>
@@ -102,7 +102,7 @@ const AboutSection = () => {
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications.
           </p>
-          <div className={`flex flex-row justify-between mt-8 px-12 rounded-xl items-center bg-opacity-35 ${darkMode? 'bg-none' : 'bg-black'}`} >
+          <div className={`flex flex-row justify-between mt-8 md:px-12 lg:px-12 rounded-xl items-center bg-opacity-35 ${darkMode? 'bg-none' : 'bg-black'}`} >
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
