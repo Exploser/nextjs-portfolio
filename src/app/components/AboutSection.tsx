@@ -17,35 +17,35 @@ const AboutSection = () => {
       content: (
         <ul className="pl-2" id="skills">
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/node-js.svg" : "/images/tools/node-js-dark.svg" }`} alt="Node JS" />
+            <Image src={`${darkMode? "/images/tools/node-js.svg" : "/images/tools/node-js-dark.svg" }`} alt="Node JS" width={100} height={100} />
             <span className="tooltip">NodeJS</span>
           </li>
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/express-js.svg" : "/images/tools/express-js-dark.svg"}`} alt="Express JS" />
+            <Image src={`${darkMode? "/images/tools/express-js.svg" : "/images/tools/express-js-dark.svg"}`} alt="Express JS" width={100} height={100} />
             <span className="tooltip">Express</span>
           </li>
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/postgre-sql.svg" : "/images/tools/postgre-sql-dark.svg"}`} alt="Postgres SQL" />
+            <Image src={`${darkMode? "/images/tools/postgre-sql.svg" : "/images/tools/postgre-sql-dark.svg"}`} alt="Postgres SQL" width={100} height={100} />
             <span className="tooltip">Postgres SQL</span>
           </li>
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/firebase.svg" : "/images/tools/firebase-dark.svg"}`} alt="Firebase" />
+            <Image src={`${darkMode? "/images/tools/firebase.svg" : "/images/tools/firebase-dark.svg"}`} alt="Firebase" width={100} height={100} />
             <span className="tooltip">Firebase</span>
           </li>
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/javascript.svg" : "/images/tools/javascript-dark.svg"}`} alt="Javascript & Typescript" />
+            <Image src={`${darkMode? "/images/tools/javascript.svg" : "/images/tools/javascript-dark.svg"}`} alt="Javascript & Typescript" width={100} height={100} />
             <span className="tooltip">Javascript & Typescript</span>
           </li>
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/react.svg" : "/images/tools/react-dark.svg"}`} alt="React" />
+            <Image src={`${darkMode? "/images/tools/react.svg" : "/images/tools/react-dark.svg"}`} alt="React" width={100} height={100} />
             <span className="tooltip">React</span>
           </li>
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/c-sharp.svg" : "/images/tools/c-sharp-dark.svg"}`} alt="C#" title="C#" />
+            <Image src={`${darkMode? "/images/tools/c-sharp.svg" : "/images/tools/c-sharp-dark.svg"}`} alt="C#" title="C#" width={100} height={100} />
             <span className="tooltip">C#</span>
           </li>
           <li className="skill">
-            <img src={`${darkMode? "/images/tools/next-js.svg" : "/images/tools/next-js-dark.svg"}`} alt="NextJS" />
+            <Image src={`${darkMode? "/images/tools/next-js.svg" : "/images/tools/next-js-dark.svg"}`} alt="NextJS" width={100} height={100} />
             <span className="tooltip">NextJS</span>
           </li>
         </ul>
@@ -58,7 +58,7 @@ const AboutSection = () => {
         <ul className="pl-2" id="education">
           <li className="skill">
             <a href="https://commons.wikimedia.org/wiki/File:Conestoga_College_logo.svg">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Conestoga_College_logo.svg" alt="Conestoga College" />
+              <Image src="https://upload.wikimedia.org/wikipedia/commons/4/46/Conestoga_College_logo.svg" alt="Conestoga College" width={100} height={100} />
               <span className="tooltip">Conestoga College</span>
             </a>
           </li>

@@ -118,11 +118,11 @@ const EmailSection: React.FC = () => {
           to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/Exploser" target="_blank" rel="noopener noreferrer">
-            <img src={`${darkMode? '/icons/light-gh-icon.svg' : '/icons/dark-gh-icon.svg'}`} alt="Github" className="w-12 h-12 mx-4"/>
+          <Link href="https://github.com/Exploser" target="_blank" rel="noopener noreferrer" >
+            <Image src={`${darkMode? '/icons/light-gh-icon.svg' : '/icons/dark-gh-icon.svg'}`} alt="Github" className="w-12 h-12 mx-4" width={10} height={1}/>
           </Link>
           <Link href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-            <img src={`${darkMode? '/icons/dark-yt-icon.svg': '/icons/light-yt-icon.svg' }`} alt="Youtube" className="w-12 h-12 mx-4"/>
+            <Image src={`${darkMode? '/icons/dark-yt-icon.svg': '/icons/light-yt-icon.svg' }`} alt="Youtube" className="w-12 h-12 mx-4" width={10} height={1}/>
           </Link>
         </div>
       </div>
