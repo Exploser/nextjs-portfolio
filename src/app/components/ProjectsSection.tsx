@@ -11,7 +11,7 @@ const projectsData = [
     title: "Tweet Ahead: Twitter Scheduler",
     description: "Schedule your tweets ahead of time",
     image: "/images/projects/Tweet-Ahead.jpg",
-    tag: ["Old"],
+    tag: ["Outdated"],
     gitUrl: "https://github.com/Exploser/Posts-Scheduler",
   },
   {
@@ -19,7 +19,7 @@ const projectsData = [
     title: "Exploser Blogs: Personal Blogs",
     description: "A simple blog application made with wordpress.",
     image: "/images/projects/Blogs.png",
-    tag: ["Old"],
+    tag: ["Outdated"],
     gitUrl: "https://github.com/Exploser/Personal-Blog-Site",
     previewUrl: "https://exploserblogs.com/",
   },
@@ -28,7 +28,7 @@ const projectsData = [
     title: "Exploser Portfolio: Personal Portfolio",
     description: "A simple portfolio application with Next, React, and TailwindCSS.",
     image: "/images/projects/Portfolio.png",
-    tag: ["Old"],
+    tag: ["Outdated"],
     gitUrl: "https://github.com/Exploser/portfolio-website",
   },
   {
@@ -52,7 +52,7 @@ const projectsData = [
     title: "TacoTunes: Find new music!",
     description: "Spotify Web API project to find new music based on your taste.",
     image: "/images/projects/Taco-Tunes.jpg",
-    tag: ["Old"],
+    tag: ["Outdated"],
     gitUrl: "https://github.com/Exploser/SpotiShare",
     previewUrl: "https://wrapifer.vercel.app/",
   },
@@ -138,11 +138,11 @@ const ProjectsSection = () => {
             onClick={() => handleTagChange("Software")}
             name="Software"
             isSelected={tag === "Software"}
-          />
+          />old
           <ProjectTag
-            onClick={() => handleTagChange("Old")}
-            name="Old"
-            isSelected={tag === "Old"}
+            onClick={() => handleTagChange("Outdated")}
+            name="Outdated"
+            isSelected={tag === "Outdated"}
           />
         </div>
       </div>
