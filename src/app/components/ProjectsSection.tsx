@@ -82,6 +82,15 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Exploser/Loser-AI",
     previewUrl: "https://loserai.vercel.app/",
+  },
+  {
+    id: 9,
+    title: "TunaTunes: Music Recommendation System",
+    description: "A music recommendation system that suggests music based on your taste.",
+    image: "/images/projects/TunaTunes.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Exploser/TunaTunes",
+    previewUrl: "https://tuna-tunes.vercel.app",
   }
 ];
 
