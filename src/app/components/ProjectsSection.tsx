@@ -138,7 +138,7 @@ const ProjectsSection = () => {
             onClick={() => handleTagChange("Software")}
             name="Software"
             isSelected={tag === "Software"}
-          />old
+          />
           <ProjectTag
             onClick={() => handleTagChange("Outdated")}
             name="Outdated"
