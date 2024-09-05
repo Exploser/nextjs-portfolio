@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useDarkMode } from "../context/DarkModeContext";
 
 const InterestsSection = () => {
@@ -23,7 +24,7 @@ const InterestsSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
                 {interests.map(interest => (
                     <div key={interest.id} className="flex flex-col items-center text-center hover:scale-125 transition-transform">
-                        <img src={interest.image} alt={interest.text} className="w-16 h-16 mb-4" />
+                        <Image src={interest.image} alt={interest.text} width={16} height={16} className="w-16 h-16 mb-4" />
                         <p className="text-lg font-medium">{interest.text}</p>
                     </div>
                 ))}
