@@ -5,6 +5,7 @@ import AchievementsSection from "./components/AchievementsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import HeaderSection from "./components/Header";
+import InterestsSection from "./components/InterestsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import { useDarkMode } from "./context/DarkModeContext";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <HeaderSection />
         <AchievementsSection />
         <AboutSection />
+        <InterestsSection />
         <ProjectsSection />
         <EmailSection />
       </section>
