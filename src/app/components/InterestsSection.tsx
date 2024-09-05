@@ -19,12 +19,12 @@ const InterestsSection = () => {
     return (
         <section className={`min-h-fit flex flex-col md:my-20 lg:my-20 my-0 ${darkMode ? 'text-white' : 'text-black'}`} id="about">
             <h2 className="text-4xl font-bold md:ml-28 lg:ml-28 sm:m-0">
-                <span className={darkMode ? 'text-animation-small' : 'text-animation-small-light'}>Fields of Intrests</span>,
+                <span className={darkMode ? 'text-animation-small' : 'text-animation-small-light'}>Fields of Interest</span>,
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
                 {interests.map(interest => (
                     <div key={interest.id} className="flex flex-col items-center text-center hover:scale-125 transition-transform">
-                        <Image src={interest.image} alt={interest.text} width={16} height={16} className="w-16 h-16 mb-4" />
+                        <Image src={interest.image} alt={interest.text} width={64} height={64} className="my-4" />
                         <p className="text-lg font-medium">{interest.text}</p>
                     </div>
                 ))}
